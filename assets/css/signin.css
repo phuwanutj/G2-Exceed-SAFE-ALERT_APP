@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&display=swap');
+
+
+h1 {
+    font-size: 70px;
+    color: coral;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1.signupheader {
+    font-size: 70px;
+    color: white;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-size: 20px;
+    color: rgb(8, 42, 85);
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+b {
+    font-size: 20px;
+    color: rgb(8, 42, 85);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header1 {
+    position: relative;
+    padding: 5em;
+}
+
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    opacity:1;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
+  
+  /* Float cancel and signup buttons and add an equal width */
+  .cancelbtn, .signupbtn {
+    float: left;
+    width: 25%;
+    
+  }
+  
+  /* Add padding to container elements */
+  .container {
+    padding: 16px;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Change styles for cancel button and signup button on extra small screens */
+  @media screen and (max-width: 768px) {
+    
+
+    .signupform {
+        display: inline-block;
+        background-color: grey;
+        margin-bottom: 5%;
+        margin-right: 20%;
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 70px;
+        color: coral;
+        text-align: left;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .header1 {
+        position: relative;
+        padding-top: 2em;
+    }
+
+    .signinbutton {
+      display: flex;
+      flex: 2;
+      flex-direction: row;
+      justify-content: space-around;
+      position: relative;
+    }
+
+    .nav.navbar-nav.mu-menu.navbar-right {
+      display: flex;
+      flex-direction: row;
+    }
+
+  }
+
+.container-proj2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  padding-top: 20px;
+  border: 2px hidden;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 25px;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  margin-top: 45px;}
+
+
+.signinbutton {
+  display: flex;
+  flex: 2;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+}
+

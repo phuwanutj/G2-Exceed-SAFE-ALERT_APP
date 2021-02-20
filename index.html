@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Safe Alert App : Home</title>
+    <link
+      rel="shortcut icon"
+      type="image/icon"
+      href="assets/images/favicon.ico"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/slick.css" rel="stylesheet" />
+    <link
+      id="switcher"
+      href="assets/css/theme-color/default-theme.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body onload="display_ct();">
+    <header id="mu-header" class="" role="banner">
+      <div class="container">
+        <nav class="navbar navbar-default mu-navbar">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button
+                type="button"
+                class="navbar-toggle collapsed"
+                data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html"
+                ><i aria-hidden="true"></i> SAFE ALERT APP</a
+              >
+            </div>
+            <div
+              class="collapse navbar-collapse"
+              id="bs-example-navbar-collapse-1"
+            >
+              <ul class="nav navbar-nav mu-menu navbar-right">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#mu-reserve">Reserve</a></li>
+                <li><a href="#mu-contact">SIGN UP/SIGN IN</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section id="mu-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-sm-push-6">
+            <div class="mu-hero-right">
+              <div class="top-right">
+                <div class="flex-between">
+                  <div id="pending-queue">People In Queue:</div>
+                </div>
+                <div class="flex-between">
+                  <div id="time-estimated">Estimated Time:</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-sm-pull-6">
+            <div class="mu-hero-left">
+              <a href="#mu-reserve" class="mu-secondary-btn"
+                >Reserve Your Queue</a
+              ><br />
+              <a
+                href="#"
+                class="mu-primary-btn"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Check your Queue
+              </a>
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Check Your Queue
+                      </h5>
+                    </div>
+                    <div class="modal-body">
+                      <div id="info"></div>
+                      <form
+                        id="checkQueue"
+                        onsubmit="event.preventDefault(); checkQueue();"
+                        class="mu-contact-form"
+                      >
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Username"
+                            id="username"
+                            name="username"
+                            required
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="password"
+                            class="form-control"
+                            placeholder="Password"
+                            id="password"
+                            name="password"
+                            required
+                          />
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                          <span>Check</span>
+                        </button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                        onclick="$('#info').html(''); $('#checkQueue').show()"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <main role="main">
+      <section id="mu-counter">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mu-counter-area">
+                <div class="mu-counter-block">
+                  <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                      <div class="mu-single-counter">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <div class="counter-value" id="people-in-shop">0 / 0</div>
+                        <h5 class="mu-counter-name">People in Shop</h5>
+                      </div>
+                    </div>
+                    <!-- / Single Counter -->
+
+                    <!-- Start Single Counter -->
+                    <div class="col-md-3 col-sm-6">
+                      <div class="mu-single-counter">
+                        <div class="counter-value" id="current-time"></div>
+                        <h5 class="mu-counter-name">Current Time</h5>
+                      </div>
+                    </div>
+                    <!-- / Single Counter -->
+
+                    <!-- Start Single Counter -->
+                    <div class="col-md-3 col-sm-6">
+                      <div class="mu-single-counter">
+                        <div class="counter-value">0</div>
+                        <h5 class="mu-counter-name">Recent Quit</h5>
+                      </div>
+                    </div>
+                    <!-- / Single Counter -->
+
+                    <!-- Start Single Counter -->
+                    <div class="col-md-3 col-sm-6">
+                      <div class="mu-single-counter">
+                        <h1 class="counter-value">21:58:25</h1>
+                        <h5 class="mu-counter-name">Last Entered</h5>
+                      </div>
+                    </div>
+                    <!-- / Single Counter -->
+
+                    <div class="col-md-3 col-sm-6">
+                      <div class="mu-single-counter">
+                        <h1 class="counter-value">22:02:00</h1>
+                        <h5 class="mu-counter-name">Last Exited</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mu-reserve">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mu-reserve-area">
+                <div class="mu-heading-area">
+                  <h2 class="mu-heading-title">Reserve Queue</h2>
+                  <span class="mu-header-dot"></span>
+                  <div id="reserve-alert" class="alert" role="alert"></div>
+                </div>
+                <form
+                  id="reserveQueue"
+                  onsubmit="event.preventDefault(); reserveQueue();"
+                  class="mu-contact-form"
+                >
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Username"
+                      id="username"
+                      name="username"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      id="password"
+                      name="password"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="mu-send-msg-btn">
+                    <span>RESERVE</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Book Overview -->
+
+      <!-- Start Contact -->
+      <section id="mu-contact">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mu-contact-area">
+                <div class="mu-heading-area">
+                  <h2 class="mu-heading-title">Sign Up with Us</h2>
+                  <span class="mu-header-dot"></span>
+                  <p>
+                    Sign Up with Safe Alert App to receive the wristband and
+                    start shopping in your favorite stores!
+                  </p>
+                </div>
+
+                <!-- Start Contact Content -->
+                <div class="mu-contact-content">
+                  <div id="form-messages"></div>
+                  <form
+                    id="signup"
+                    onsubmit="event.preventDefault(); signUpForm();"
+                    class="mu-contact-form"
+                  >
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Enter Email"
+                        id="email"
+                        name="email"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Username"
+                        id="username"
+                        name="username"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        class="form-control"
+                        placeholder="Enter Password"
+                        id="password1"
+                        name="password1"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        class="form-control"
+                        placeholder="Enter Confirm Password"
+                        id="password2"
+                        name="password2"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name"
+                        id="name"
+                        name="name"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Surname"
+                        id="surname"
+                        name="surname"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Occupation"
+                        id="occupation"
+                        name="occupation"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Age"
+                        id="age"
+                        name="age"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="gender">Gender :</label>
+                      <select id="gender" name="gender" class="form-control">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Not Specified">Not Specified</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="shop">Preferred Shop Catagory :</label>
+                      <select id="shop" name="shop" class="form-control">
+                        <option value="1">Banking</option>
+                        <option value="2">Dining</option>
+                        <option value="3">Entertainment</option>
+                        <option value="4">Fashion</option>
+                        <option value="5">Gems</option>
+                        <option value="6">Home and Decor</option>
+                        <option value="7">Kids</option>
+                        <option value="8">Lifestyle</option>
+                        <option value="9">Service</option>
+                        <option value="10">Smart Kids</option>
+                        <option value="11">Sport</option>
+                        <option value="12">Supermarket</option>
+                        <option value="13">Technology</option>
+                        <option value="14">Wellness</option>
+                        <option value="15">Other</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="mu-send-msg-btn">
+                      <span>SUBMIT</span>
+                    </button>
+                  </form>
+                </div>
+                <!-- End Contact Content -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Contact -->
+    </main>
+
+    <!-- End main content -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="assets/js/counter.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="assets/js/jscript1.js"></script>
+    <script>
+      const url = "http://158.108.182.2:50006/";
+      function signUpForm() {
+        let form = document.getElementById("signup");
+        if (
+          form.elements["password1"].value !== form.elements["password2"].value
+        ) {
+          alert("Password not match!");
+          return;
+        }
+        $.ajax({
+          type: "POST",
+          url: url + "member",
+          data: JSON.stringify({
+            U_Username: form.elements["username"].value,
+            U_password: form.elements["password1"].value,
+            U_email: form.elements["email"].value,
+            U_age: form.elements["age"].value,
+            U_gender: form.elements["gender"].value,
+            U_name: form.elements["name"].value,
+            U_surname: form.elements["surname"].value,
+            U_occupation: form.elements["occupation"].value,
+            U_catId: form.elements["shop"].value,
+          }),
+          success: (res) => {
+            if (res.Result === "Username already use")
+              alert("Username already use!");
+            else alert("SignUp Success!");
+          },
+          contentType: "application/json",
+          dataType: "json",
+        });
+      }
+      function reserveQueue() {
+        let form = document.getElementById("reserveQueue");
+        console.log({
+          Q_Username: form.elements["username"].value,
+          Q_Password: form.elements["password"].value,
+          Q_shopID: 0, // fixed
+        });
+        $.ajax({
+          type: "POST",
+          url: url + "queue",
+          data: JSON.stringify({
+            Q_Username: form.elements["username"].value,
+            Q_password: form.elements["password"].value,
+            Q_shopID: 0, // fixed
+          }),
+          success: (res) => {
+            if (res.Result === "This Username already in queue") {
+              $("#reserve-alert").addClass("alert-danger");
+              $("#reserve-alert").html("Your're in queued.");
+              return;
+            }
+            if (res.Result === "Wrong Username or Password") {
+              $("#reserve-alert").addClass("alert-danger");
+              $("#reserve-alert").html(res.Result);
+              return;
+            }
+            $("#reserve-alert").addClass("alert-success");
+            $("#reserve-alert").html("Reserved!");
+          },
+          contentType: "application/json",
+          dataType: "json",
+        });
+      }
+      function checkQueue() {
+        let form = document.getElementById("checkQueue")
+        console.log({
+          Q_Username: form.elements["username"].value,
+          Q_Password: form.elements["password"].value,
+          Q_shopID: 0, // fixed
+        });
+        $.ajax({
+          type: "POST",
+          url: url + "now_queue",
+          data: JSON.stringify({
+            Q_Username: form.elements["username"].value,
+            Q_password: form.elements["password"].value,
+            // Q_shopID: 0, // fixed
+          }),
+          success: (res) => {
+            $('#checkQueue').hide()
+            if(res.Result === 'Wrong Username Password or Not have data in queue') {
+              $('#info').html(res.Result)
+              return
+            }
+            $('#info').html("Your queue ID: " + res.Q_queueID + "\nWaiting List: " + res.now)
+          },
+          contentType: "application/json",
+          dataType: "json",
+        });
+
+      }
+    </script>
+  </body>
+</html>

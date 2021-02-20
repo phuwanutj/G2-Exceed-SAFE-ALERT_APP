@@ -1,0 +1,389 @@
+<link
+      rel="shortcut icon"
+      type="image/icon"
+      href="assets/images/favicon.ico"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/slick.css" rel="stylesheet" />
+    <link
+      id="switcher"
+      href="assets/css/theme-color/default-theme.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <title>Safe Alert App : Admin</title>
+  </head>
+
+  <body onload="display_ct();">
+    <header id="mu-header" class="" role="banner">
+      <div class="container">
+        <nav class="navbar navbar-default mu-navbar">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button
+                type="button"
+                class="navbar-toggle collapsed"
+                data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html"
+                ><i aria-hidden="true"></i> SAFE ALERT APP</a
+              >
+            </div>
+            <div
+              class="collapse navbar-collapse"
+              id="bs-example-navbar-collapse-1"
+            >
+              <ul class="nav navbar-nav mu-menu navbar-right">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#mu-reserve">Reserve</a></li>
+                <li><a href="index.html#mu-contact">SIGN UP/SIGN IN</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section id="mu-hero">
+      <div class="admin-intro"></div>
+        <h1 class="intro">Welcome to admin information page!</h1>
+        <p class="intro-p">Check out the available statistics for your selected shop down below!</p>
+      </div>
+    </section>
+    
+    <main role="main">
+      <section id="mu-book-overview">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mu-book-overview-area-admin">
+                <div class="mu-heading-area">
+                  <h2 class="mu-heading-title">Data Graphs</h2>
+                  <span class="mu-header-dot"></span>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="container-proj2">
+          <div id="chartContainer1" style="height: 370px; width: 100%;"></div>
+        </div>
+        <div class="container-proj2">
+          <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+        </div>
+        <div class="container-proj2">
+          <div id="chartContainer3" style="height: 370px; width: 100%;"></div>
+        </div>
+        <div class="container-proj2">
+          <div id="chartContainer4" style="height: 370px; width: 100%;"></div>
+        </div>
+        <div class="container-proj2">
+          <div id="chartContainer5" style="height: 370px; width: 100%;"></div>
+        </div>
+        <div class="container-proj2">
+          <div id="chartContainer6" style="height: 370px; width: 100%;"></div>
+        </div>
+      </section>
+      
+    </main>
+
+    <!-- End main content -->
+
+    <!-- Start footer -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="assets/js/counter.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="assets/js/jscript1.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script>
+      window.onload = getData1(), getData2(), getData3(), getData4(), getData5(), getData6(), graphData1(), graphData2(), graphData3(), graphData4(), graphData5(), graphData6();
+      function getData1(){
+        $.ajax({
+          type:"GET",
+          url: "http://158.108.182.2:50002/get_graph1",
+          success: (data) => {graphData1(data), console.log(data)},
+          contentType: "application/json",
+          dataType: "json",
+        })
+      }
+
+      function graphData1(data){
+        var dataPoint1 = [];
+        var numloop = Object.keys(data).length;
+        for (var i = 0; i < numloop; i++) {
+          dataPoint1.push({
+            label: String(Object.keys(data)[i]),
+            y: parseInt(Object.values(data)[i])
+          });
+        }
+        console.log(dataPoint1)
+        var chart = new CanvasJS.Chart("chartContainer1", {
+          animationEnabled: true,
+          theme: "light2",
+          title: {
+            text: "Numbers of people in age group"
+          },
+          axisY: {
+            title: "Number of People",
+            titleFontSize: 24,
+            includeZero: true
+          },
+            axisX: {
+            title: "Age Range",
+            titleFontSize: 24
+          },
+          data: [{
+            type: "column",
+            yValueFormatString: "People",
+            dataPoints: dataPoint1
+          }]
+        });
+      chart.render();
+}
+
+function getData2(){
+    $.ajax({
+      type:"GET",
+      url: "http://158.108.182.2:50002/get_graph2",
+      success: (data) => {graphData2(data), console.log(data)},
+      contentType: "application/json",
+      dataType: "json",
+    })
+  }
+
+  function graphData2(data){
+    var dataPoint2 = [];
+    var numloop = Object.keys(data).length;
+    for (var i = 0; i < numloop; i++) {
+      dataPoint2.push({
+        label: String(Object.keys(data)[i]),
+        y: parseInt(Object.values(data)[i])
+      });
+    }
+    console.log(dataPoint2)
+    var chart2 = new CanvasJS.Chart("chartContainer2", {
+      animationEnabled: true,
+      theme: "light2",
+      title: {
+        text: "Numbers of genders in shop"
+      },
+      axisY: {
+        title: "Number of People",
+        titleFontSize: 24,
+        includeZero: true
+      },
+        axisX: {
+        title: "Gender",
+        titleFontSize: 24
+      },
+      data: [{
+        type: "column",
+        yValueFormatString: "People",
+        dataPoints: dataPoint2
+      }]
+    });
+  chart2.render();
+}
+
+function getData3(){
+    $.ajax({
+      type:"GET",
+      url: "http://158.108.182.2:50002/get_graph3",
+      success: (data) => {graphData3(data), console.log(data)},
+      contentType: "application/json",
+      dataType: "json",
+    })
+  }
+
+  function graphData3(data){
+    var dataPoint3 = [];
+    var numloop = Object.keys(data).length;
+    for (var i = 0; i < numloop; i++) {
+      dataPoint3.push({
+        label: String(Object.keys(data)[i]),
+        y: parseInt(Object.values(data)[i])
+      });
+    }
+    console.log(dataPoint3)
+    var chart3 = new CanvasJS.Chart("chartContainer3", {
+      animationEnabled: true,
+      theme: "light2",
+      title: {
+        text: "Customers Occupation Catagory Population"
+      },
+      axisY: {
+        title: "Number of People",
+        titleFontSize: 24,
+        includeZero: true
+      },
+        axisX: {
+        title: "Occupation",
+        titleFontSize: 5
+      },
+      data: [{
+        type: "column",
+        yValueFormatString: "People",
+        dataPoints: dataPoint3
+      }]
+    });
+  chart3.render();
+}
+
+function getData4(){
+    console.log("getting data from graph4")
+    $.ajax({
+      type:"GET",
+      url: "http://158.108.182.2:50002/get_graph4",
+      success: (data) => {graphData4(data), console.log(data)},
+      contentType: "application/json",
+      dataType: "json"
+    })
+  }
+
+  function graphData4(data){
+    var dataPoint4 = [];
+    var numloop = Object.keys(data).length;
+    for (var i = 0; i < numloop; i++) {
+      dataPoint4.push({
+        label: String(Object.keys(data)[i]),
+        y: parseInt(Object.values(data)[i])
+      });
+    }
+    console.log(dataPoint4)
+    var chart4 = new CanvasJS.Chart("chartContainer4", {
+      animationEnabled: true,
+      theme: "light2",
+      title: {
+        text: "Range of time period customers spent in shop"
+      },
+      axisY: {
+        title: "Number of People",
+        titleFontSize: 24,
+        includeZero: true
+      },
+        axisX: {
+        title: "Range of Time",
+        titleFontSize: 24
+      },
+      data: [{
+        type: "column",
+        yValueFormatString: "People",
+        dataPoints: dataPoint4
+      }]
+    });
+  chart4.render();
+}
+
+function getData5(){
+    console.log("getting data from graph5")
+    $.ajax({
+      type:"GET",
+      url: "http://158.108.182.2:50002/get_graph5",
+      success: (data) => {graphData5(data), console.log(data)},
+      contentType: "application/json",
+      dataType: "json"
+    })
+  }
+
+  function graphData5(data){
+    var dataPoint5 = [];
+    var numloop = Object.keys(data).length;
+    for (var i = 0; i < numloop; i++) {
+      dataPoint5.push({
+        label: String(Object.keys(data)[i]),
+        y: parseInt(Object.values(data)[i])
+      });
+    }
+    console.log(dataPoint5)
+    var chart5 = new CanvasJS.Chart("chartContainer5", {
+      animationEnabled: true,
+      theme: "light2",
+      title: {
+        text: "Number of people visiting shop hours by hours"
+      },
+      axisY: {
+        title: "Number of People",
+        titleFontSize: 24,
+        includeZero: true
+      },
+        axisX: {
+        title: "Time",
+        titleFontSize: 24
+      },
+      data: [{
+        type: "column",
+        yValueFormatString: "People",
+        dataPoints: dataPoint5
+      }]
+    });
+  chart5.render();
+}
+
+function getData6(){
+    console.log("getting data from graph6")
+    $.ajax({
+      type:"GET",
+      url: "http://158.108.182.2:50002/get_graph6",
+      success: (data) => {graphData6(data), console.log(data)},
+      contentType: "application/json",
+      dataType: "json"
+    })
+  }
+
+  function graphData6(data){
+    var dataPoint6 = [];
+    var numloop = Object.keys(data).length;
+    for (var i = 0; i < numloop; i++) {
+      dataPoint6.push({
+        label: String(Object.keys(data)[i]),
+        y: parseInt(Object.values(data)[i])
+      });
+    }
+    console.log(dataPoint6)
+    var chart6 = new CanvasJS.Chart("chartContainer6", {
+      animationEnabled: true,
+      theme: "light2",
+      title: {
+        text: "Number of customers most preferred shop catagories"
+      },
+      axisY: {
+        title: "Number of People",
+        titleFontSize: 24,
+        includeZero: true
+      },
+        axisX: {
+        title: "Shop Catagories",
+        titleFontSize: 24
+      },
+      data: [{
+        type: "column",
+        yValueFormatString: "People",
+        dataPoints: dataPoint6
+      }]
+    });
+  chart6.render();
+  }
+    </script>
+  </body>
+</html>

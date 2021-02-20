@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Safe Alert App : Home</title>
+    <link
+      rel="shortcut icon"
+      type="image/icon"
+      href="assets/images/favicon.ico"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/slick.css" rel="stylesheet" />
+    <link
+      id="switcher"
+      href="assets/css/theme-color/default-theme.css"
+      rel="stylesheet"
+    />
+    <link href="new_style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+      <div class="alert" role="alert" style="position: fixed; top: 5%; z-index: 10;" id="handle-response">
+      </div>
+    <div class="app-container">
+      <h2 style="margin-left: 24px">Dashboard</h2>
+      <div class="app-content">
+        <div class="projects-section">
+          <div class="projects-section-header">
+            <p>Data Analysis</p>
+            <p class="time">December, 12</p>
+          </div>
+          <!-- <div class="projects-section-line">
+              <div class="projects-status">
+                <div class="item-status">
+                  <span class="status-number">45</span>
+                  <span class="status-type">In Progress</span>
+                </div>
+                <div class="item-status">
+                  <span class="status-number">24</span>
+                  <span class="status-type">Upcoming</span>
+                </div>
+                <div class="item-status">
+                  <span class="status-number">62</span>
+                  <span class="status-type">Total Projects</span>
+                </div>
+              </div>
+            </div> -->
+          <div class="project-boxes jsGridView">
+            <div class="project-box-wrapper">
+              <div class="project-box" style="background-color: #fee4cb">
+                <div class="project-box-header">
+                  <span>December 10, 2020</span>
+                  <div class="more-wrapper">
+                    <button class="project-btn-more">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-more-vertical"
+                      >
+                        <circle cx="12" cy="12" r="1" />
+                        <circle cx="12" cy="5" r="1" />
+                        <circle cx="12" cy="19" r="1" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="project-box-content-header">
+                  <!-- <p class="box-content-header">Web Designing</p>
+                  <p class="box-content-subheader">Prototyping</p> -->
+                </div>
+                <div class="box-progress-wrapper">
+                    <div id="chartContainer1" style="height: 370px; width: 100%;"></div>
+                </div>
+                <div class="project-box-footer" style="margin-top: 10px">
+                </div>
+              </div>
+            </div>
+            <div class="project-box-wrapper">
+              <div class="project-box" style="background-color: #e9e7fd">
+                <div class="project-box-header">
+                  <span>December 10, 2020</span>
+                  <div class="more-wrapper">
+                    <button class="project-btn-more">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-more-vertical"
+                      >
+                        <circle cx="12" cy="12" r="1" />
+                        <circle cx="12" cy="5" r="1" />
+                        <circle cx="12" cy="19" r="1" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="project-box-content-header">
+                  <!-- <p class="box-content-header">Testing</p>
+                  <p class="box-content-subheader">Prototyping</p> -->
+                </div>
+                <div class="box-progress-wrapper">
+                    <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+                </div>
+                <div class="project-box-footer" style="margin-top: 10px">
+                </div>
+              </div>
+            </div>
+            <div class="project-box-wrapper">
+              <div class="project-box">
+                <div class="project-box-header">
+                  <span>December 10, 2020</span>
+                  <div class="more-wrapper">
+                    <button class="project-btn-more">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-more-vertical"
+                      >
+                        <circle cx="12" cy="12" r="1" />
+                        <circle cx="12" cy="5" r="1" />
+                        <circle cx="12" cy="19" r="1" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="project-box-content-header">
+                </div>
+                <div class="box-progress-wrapper">
+                    <div id="chartContainer3" style="height: 370px; width: 100%;"></div>
+                </div>
+                <div class="project-box-footer" style="margin-top: 10px">
+                </div>
+              </div>
+            </div>
+            <div class="project-box-wrapper">
+              <div class="project-box" style="background-color: #ffd3e2">
+                <div class="project-box-header">
+                  <span>December 10, 2020</span>
+                  <div class="more-wrapper">
+                    <button class="project-btn-more">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-more-vertical"
+                      >
+                        <circle cx="12" cy="12" r="1" />
+                        <circle cx="12" cy="5" r="1" />
+                        <circle cx="12" cy="19" r="1" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="project-box-content-header">
+                  <!-- <p class="box-content-header">UI Development</p>
+                  <p class="box-content-subheader">Prototyping</p> -->
+                </div>
+                <div class="box-progress-wrapper">
+                    <div id="chartContainer4" style="height: 370px; width: 100%;"></div>
+                </div>
+                <div class="project-box-footer" style="margin-top: 10px">
+                </div>
+              </div>
+            </div>
+            <div class="project-box-wrapper">
+              <div class="project-box" style="background-color: #c8f7dc">
+                <div class="project-box-header">
+                  <span>December 10, 2020</span>
+                  <div class="more-wrapper">
+                    <button class="project-btn-more">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-more-vertical"
+                      >
+                        <circle cx="12" cy="12" r="1" />
+                        <circle cx="12" cy="5" r="1" />
+                        <circle cx="12" cy="19" r="1" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="project-box-content-header">
+                  <!-- <p class="box-content-header">Data Analysis</p>
+                  <p class="box-content-subheader">Prototyping</p> -->
+                </div>
+                <div class="box-progress-wrapper">
+                  <div id="chartContainer5" style="height: 370px; width: 100%;"></div>
+                </div>
+                <div class="project-box-footer" style="margin-top: 10px">
+                </div>
+              </div>
+            </div>
+            <div class="project-box-wrapper">
+              <div class="project-box" style="background-color: #d5deff">
+                <div class="project-box-header">
+                  <span>December 10, 2020</span>
+                  <div class="more-wrapper">
+                    <button class="project-btn-more">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-more-vertical"
+                      >
+                        <circle cx="12" cy="12" r="1" />
+                        <circle cx="12" cy="5" r="1" />
+                        <circle cx="12" cy="19" r="1" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="project-box-content-header">
+                  <!-- <p class="box-content-header">Web Designing</p>
+                  <p class="box-content-subheader">Prototyping</p> -->
+                </div>
+                <div class="box-progress-wrapper">
+                  <div id="chartContainer6" style="height: 370px; width: 100%;"></div>
+                </div>
+                <div class="project-box-footer" style="margin-top: 10px">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="messages-section">
+          <button class="messages-close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-x-circle"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+          </button>
+          <div class="projects-section-header">
+            <p>Add Wristband</p>
+          </div>
+          <div class="messages" id="messages-content"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script>
+    const url = "http://158.108.182.2:50006/";
+    function submitForm(id) {
+        let form = document.getElementById('form'+id)
+        $.ajax({
+            type: "POST",
+            url: url + "add_wristband",
+            data: JSON.stringify({
+              W_Username: form.elements[0].value,
+              W_wristbandID: id
+            }),
+            success: (res) => {
+                if(res.Result) {
+                $('#handle-response').addClass("alert-danger")
+                $('#handle-response').html(res.Result)
+                setTimeout(() => {
+                    $('#handle-response').html("")
+                    $('#handle-response').removeClass("alert-danger")
+                }, 1000)
+                return
+                }
+                $('#handle-response').addClass("alert-success")
+                $('#handle-response').html("Successful!")
+                setTimeout(() => {
+                    $('#handle-response').html("")
+                    $('#handle-response').removeClass("alert-success")
+                }, 1000)
+                init();
+
+                $.ajax({
+                    type: "PATCH",
+                    url: url + "queue",
+                    data: JSON.stringify({
+                        Q_queueID: id,
+                        Q_status: 1
+                    }),
+                    success: (res2) => {
+                    },
+                    contentType: "application/json",
+                    dataType: "json",
+                });
+            },
+            contentType: "application/json",
+            dataType: "json",
+          });
+    }
+    function init() {
+    let html = "";
+      $.ajax({
+        type: "POST",
+        url: url + "get_wristband",
+        data: JSON.stringify({
+          Wr_status: 0,
+        }),
+        success: (res) => {
+          res.Result.map((r) => {
+            html += `
+            <form onsubmit="event.preventDefault(); submitForm(${r}); " id="form${r}">
+                <div class="message-box left-green">
+              <div class="message-content">
+                <div class="message-header">
+                    <div>
+                        <div class="name">Wristband No.${r}</div>
+                        <p class="message-line">Available</p>
+                    </div>
+                  <div class="input-block">
+                      <input type="text" id="name${r}" placeholder="Username" style="margin-top: 10px;"/>
+                      <button type="submit"class="btn" style="margin-top: 10px">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div></form>`;
+          });
+          $.ajax({
+            type: "POST",
+            url: url + "get_wristband",
+            data: JSON.stringify({
+              Wr_status: 1,
+            }),
+            success: (res) => {
+              res.Result.map((r) => {
+                html += `<div class="message-box left-red">
+                    <div class="message-content">
+                        <div class="message-header">
+                            <div>
+                                <div class="name">Wristband No.${r}</div>
+                                <p class="message-line">Not Available</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>`;
+              });
+              $("#messages-content").html(html);
+            },
+            contentType: "application/json",
+            dataType: "json",
+          });
+        },
+        contentType: "application/json",
+        dataType: "json",
+      });
+    }
+    init()
+    $( "form" ).on( "submit", function( event ) {
+        event.preventDefault();
+        console.log( $( this ).serialize() );
+    });
+  </script>
+  <script>
+    window.onload = getData1(), getData2(), getData3(), getData4(), getData5(), getData6(), graphData1(), graphData2(), graphData3(), graphData4(), graphData5(), graphData6();
+    function getData1(){
+      $.ajax({
+        type:"GET",
+        url: "http://158.108.182.2:50002/get_graph1",
+        success: (data) => {graphData1(data), console.log(data)},
+        contentType: "application/json",
+        dataType: "json",
+      })
+    }
+
+    function graphData1(data){
+      var dataPoint1 = [];
+      var numloop = Object.keys(data).length;
+      for (var i = 0; i < numloop; i++) {
+        dataPoint1.push({
+          label: String(Object.keys(data)[i]),
+          y: parseInt(Object.values(data)[i])
+        });
+      }
+      console.log(dataPoint1)
+      var chart = new CanvasJS.Chart("chartContainer1", {
+        animationEnabled: true,
+        theme: "light2",
+        title: {
+          text: "Numbers of people in age group"
+        },
+        axisY: {
+          title: "Number of People",
+          titleFontSize: 24,
+          includeZero: true
+        },
+          axisX: {
+          title: "Age Range",
+          titleFontSize: 24
+        },
+        data: [{
+          type: "column",
+          yValueFormatString: "People",
+          dataPoints: dataPoint1
+        }]
+      });
+    chart.render();
+}
+
+function getData2(){
+  $.ajax({
+    type:"GET",
+    url: "http://158.108.182.2:50002/get_graph2",
+    success: (data) => {graphData2(data), console.log(data)},
+    contentType: "application/json",
+    dataType: "json",
+  })
+}
+
+function graphData2(data){
+  var dataPoint2 = [];
+  var numloop = Object.keys(data).length;
+  for (var i = 0; i < numloop; i++) {
+    dataPoint2.push({
+      label: String(Object.keys(data)[i]),
+      y: parseInt(Object.values(data)[i])
+    });
+  }
+  console.log(dataPoint2)
+  var chart2 = new CanvasJS.Chart("chartContainer2", {
+    animationEnabled: true,
+    theme: "light2",
+    title: {
+      text: "Numbers of genders in shop"
+    },
+    axisY: {
+      title: "Number of People",
+      titleFontSize: 24,
+      includeZero: true
+    },
+      axisX: {
+      title: "Gender",
+      titleFontSize: 24
+    },
+    data: [{
+      type: "column",
+      yValueFormatString: "People",
+      dataPoints: dataPoint2
+    }]
+  });
+chart2.render();
+}
+
+function getData3(){
+  $.ajax({
+    type:"GET",
+    url: "http://158.108.182.2:50002/get_graph3",
+    success: (data) => {graphData3(data), console.log(data)},
+    contentType: "application/json",
+    dataType: "json",
+  })
+}
+
+function graphData3(data){
+  var dataPoint3 = [];
+  var numloop = Object.keys(data).length;
+  for (var i = 0; i < numloop; i++) {
+    dataPoint3.push({
+      label: String(Object.keys(data)[i]),
+      y: parseInt(Object.values(data)[i])
+    });
+  }
+  console.log(dataPoint3)
+  var chart3 = new CanvasJS.Chart("chartContainer3", {
+    animationEnabled: true,
+    theme: "light2",
+    title: {
+      text: "Customers Occupation Catagory Population"
+    },
+    axisY: {
+      title: "Number of People",
+      titleFontSize: 24,
+      includeZero: true
+    },
+      axisX: {
+      title: "Occupation",
+      titleFontSize: 5
+    },
+    data: [{
+      type: "column",
+      yValueFormatString: "People",
+      dataPoints: dataPoint3
+    }]
+  });
+chart3.render();
+}
+
+function getData4(){
+  console.log("getting data from graph4")
+  $.ajax({
+    type:"GET",
+    url: "http://158.108.182.2:50002/get_graph4",
+    success: (data) => {graphData4(data), console.log(data)},
+    contentType: "application/json",
+    dataType: "json"
+  })
+}
+
+function graphData4(data){
+  var dataPoint4 = [];
+  var numloop = Object.keys(data).length;
+  for (var i = 0; i < numloop; i++) {
+    dataPoint4.push({
+      label: String(Object.keys(data)[i]),
+      y: parseInt(Object.values(data)[i])
+    });
+  }
+  console.log(dataPoint4)
+  var chart4 = new CanvasJS.Chart("chartContainer4", {
+    animationEnabled: true,
+    theme: "light2",
+    title: {
+      text: "Range of time period customers spent in shop"
+    },
+    axisY: {
+      title: "Number of People",
+      titleFontSize: 24,
+      includeZero: true
+    },
+      axisX: {
+      title: "Range of Time",
+      titleFontSize: 24
+    },
+    data: [{
+      type: "column",
+      yValueFormatString: "People",
+      dataPoints: dataPoint4
+    }]
+  });
+chart4.render();
+}
+
+function getData5(){
+  console.log("getting data from graph5")
+  $.ajax({
+    type:"GET",
+    url: "http://158.108.182.2:50002/get_graph5",
+    success: (data) => {graphData5(data), console.log(data)},
+    contentType: "application/json",
+    dataType: "json"
+  })
+}
+
+function graphData5(data){
+  var dataPoint5 = [];
+  var numloop = Object.keys(data).length;
+  for (var i = 0; i < numloop; i++) {
+    dataPoint5.push({
+      label: String(Object.keys(data)[i]),
+      y: parseInt(Object.values(data)[i])
+    });
+  }
+  console.log(dataPoint5)
+  var chart5 = new CanvasJS.Chart("chartContainer5", {
+    animationEnabled: true,
+    theme: "light2",
+    title: {
+      text: "Number of people visiting shop hours by hours"
+    },
+    axisY: {
+      title: "Number of People",
+      titleFontSize: 24,
+      includeZero: true
+    },
+      axisX: {
+      title: "Time",
+      titleFontSize: 24
+    },
+    data: [{
+      type: "column",
+      yValueFormatString: "People",
+      dataPoints: dataPoint5
+    }]
+  });
+chart5.render();
+}
+
+function getData6(){
+  console.log("getting data from graph6")
+  $.ajax({
+    type:"GET",
+    url: "http://158.108.182.2:50002/get_graph6",
+    success: (data) => {graphData6(data), console.log(data)},
+    contentType: "application/json",
+    dataType: "json"
+  })
+}
+
+function graphData6(data){
+  var dataPoint6 = [];
+  var numloop = Object.keys(data).length;
+  for (var i = 0; i < numloop; i++) {
+    dataPoint6.push({
+      label: String(Object.keys(data)[i]),
+      y: parseInt(Object.values(data)[i])
+    });
+  }
+  console.log(dataPoint6)
+  var chart6 = new CanvasJS.Chart("chartContainer6", {
+    animationEnabled: true,
+    theme: "light2",
+    title: {
+      text: "Number of customers most preferred shop catagories"
+    },
+    axisY: {
+      title: "Number of People",
+      titleFontSize: 24,
+      includeZero: true
+    },
+      axisX: {
+      title: "Shop Catagories",
+      titleFontSize: 24
+    },
+    data: [{
+      type: "column",
+      yValueFormatString: "People",
+      dataPoints: dataPoint6
+    }]
+  });
+chart6.render();
+}
+  </script>
+</html>
