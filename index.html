@@ -174,7 +174,7 @@
                     <div class="col-md-3 col-sm-6">
                       <div class="mu-single-counter">
                         <i class="fa fa-users" aria-hidden="true"></i>
-                        <div class="counter-value" id="people-in-shop">0 / 0</div>
+                        <div class="counter-value" id="people-in-shop">- / -</div>
                         <h5 class="mu-counter-name">People in Shop</h5>
                       </div>
                     </div>
@@ -192,25 +192,27 @@
                     <!-- Start Single Counter -->
                     <div class="col-md-3 col-sm-6">
                       <div class="mu-single-counter">
-                        <div class="counter-value">0</div>
-                        <h5 class="mu-counter-name">Recent Quit</h5>
+                        <div id="total" class="counter-value"></div>
+                        <h5 class="mu-counter-name">Total</h5>
                       </div>
                     </div>
                     <!-- / Single Counter -->
 
                     <!-- Start Single Counter -->
-                    <div class="col-md-3 col-sm-6">
-                      <div class="mu-single-counter">
-                        <h1 class="counter-value">21:58:25</h1>
-                        <h5 class="mu-counter-name">Last Entered</h5>
-                      </div>
-                    </div>
-                    <!-- / Single Counter -->
+                    <!-- <div> -->
 
-                    <div class="col-md-3 col-sm-6">
-                      <div class="mu-single-counter">
-                        <h1 class="counter-value">22:02:00</h1>
-                        <h5 class="mu-counter-name">Last Exited</h5>
+                      <div class="col-md-3 col-sm-6">
+                        <div class="mu-single-counter">
+                          <h1 id="last-enter" class="counter-value"></h1>
+                          <h5 class="mu-counter-name">Last Entered</h5>
+                        </div>
+                      <!-- </div> -->
+                      <!-- / Single Counter -->
+                      <!-- <div class="col-md-3 col-sm-6"> -->
+                        <div class="mu-single-counter">
+                          <h1 id="last-exit" class="counter-value"></h1>
+                          <h5 class="mu-counter-name">Last Exited</h5>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -413,7 +415,7 @@
     </main>
 
     <!-- End main content -->
-
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/slick.min.js"></script>

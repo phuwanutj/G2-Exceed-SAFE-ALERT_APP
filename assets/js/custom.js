@@ -126,6 +126,16 @@
    */
   const url = "http://158.108.182.2:50006/";
   setInterval(() => {
+    $.get(url + "infor", function (data, status) {
+      $("#last-enter").html(
+        dayjs(data.S_lastest_time_enter * 1000).format("DD/MM/YYYY HH:mm:ss")
+      );
+      $("#last-exit").html(
+        dayjs(data.S_lastest_time_left * 1000).format("DD/MM/YYYY HH:mm:ss")
+      );
+      $("#total").html(data.Total);
+    });
+
     $.get(url + "queue", function (data, status) {
       const queues = data.Result;
       const waitList = queues.filter((queue) => queue.Q_status === 0).length;
