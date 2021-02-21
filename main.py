@@ -374,7 +374,7 @@ def add_wristband():
     updated_content = {"$set":output}
     Wr_myCollection.update_one(filt, updated_content)
 
-    filt = { "Q_Username" : data['W_Username'] }
+    filt = { "Q_Username" : data['W_Username'] , "Q_status" : 0 }
     updated_content = {"$set": { "Q_status":1 }}
     Q_myCollection.update_one(filt, updated_content)
 
